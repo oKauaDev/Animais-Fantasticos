@@ -8,8 +8,7 @@ import MenuMobile from "./modules/menu-mobile.js";
 import initFuncionamento from "./modules/funcionamento.js";
 import FetchAnimais from "./modules/fetch-animais.js";
 import initFetchBitcoin from "./modules/fetch-bitcoin.js";
-
-import initTooltip from "./modules/tooltip.js";
+import Tooltip from "./modules/tooltip.js";
 
 const initList = [
   new ScrollSuave('[data-menu="suave"] a[href^="#"]'),
@@ -32,6 +31,8 @@ const initList = [
   new MenuMobile('[data-menu="button"]', '[data-menu="list"]'),
 
   new FetchAnimais("./animaisapi.json", ".numeros-grid"),
+
+  new Tooltip("[data-tooltip]"),
 ];
 
 initList.forEach((classContent) => {
@@ -39,8 +40,6 @@ initList.forEach((classContent) => {
     classContent.init();
   }
 });
-
-initTooltip();
 
 // Iniciamento por funções
 initFuncionamento();
