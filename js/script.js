@@ -3,13 +3,13 @@ import AnimacaoScroll from "./modules/scroll-animacao.js";
 import Accordion from "./modules/accordion.js";
 import TabNav from "./modules/tabnav.js";
 import Modal from "./modules/modal.js";
+import DropdownMenu from "./modules/dropdown-menu.js";
+import MenuMobile from "./modules/menu-mobile.js";
+import initFuncionamento from "./modules/funcionamento.js";
+import FetchAnimais from "./modules/fetch-animais.js";
+import initFetchBitcoin from "./modules/fetch-bitcoin.js";
 
 import initTooltip from "./modules/tooltip.js";
-import initDropdownMenu from "./modules/dropdown-menu.js";
-import initMenuMobile from "./modules/menu-mobile.js";
-import initFuncionamento from "./modules/funcionamento.js";
-import initFetchAnimais from "./modules/fetch-animais.js";
-import initFetchBitcoin from "./modules/fetch-bitcoin.js";
 
 const initList = [
   new ScrollSuave('[data-menu="suave"] a[href^="#"]'),
@@ -26,6 +26,12 @@ const initList = [
     '[data-modal="container"]',
     "ativo"
   ),
+
+  new DropdownMenu("[data-dropdown]"),
+
+  new MenuMobile('[data-menu="button"]', '[data-menu="list"]'),
+
+  new FetchAnimais("./animaisapi.json", ".numeros-grid"),
 ];
 
 initList.forEach((classContent) => {
@@ -35,8 +41,7 @@ initList.forEach((classContent) => {
 });
 
 initTooltip();
-initDropdownMenu();
-initMenuMobile();
+
+// Iniciamento por funções
 initFuncionamento();
-initFetchAnimais();
-initFetchBitcoin();
+initFetchBitcoin(".btc-preco");
