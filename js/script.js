@@ -9,6 +9,7 @@ import initFuncionamento from "./modules/funcionamento.js";
 import FetchAnimais from "./modules/fetch-animais.js";
 import initFetchBitcoin from "./modules/fetch-bitcoin.js";
 import Tooltip from "./modules/tooltip.js";
+import SlideNav from "./modules/SlideNav.js";
 
 const initList = [
   new ScrollSuave('[data-menu="suave"] a[href^="#"]'),
@@ -40,6 +41,11 @@ initList.forEach((classContent) => {
     classContent.init();
   }
 });
+
+const slide = new SlideNav(".wrapper", ".slide", "ativo");
+slide.init();
+slide.createNavBar(".navbar", ".navbar");
+slide.navTo(0);
 
 // Iniciamento por funções
 initFuncionamento();
