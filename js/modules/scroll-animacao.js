@@ -22,7 +22,6 @@ export default class AnimacaoScroll {
   }
 
   checkDistances() {
-    console.log("aaa");
     this.distances.forEach((el) => {
       if (window.scrollY > el.offset - this.windowMetade) {
         el.element.classList.add(this.classList);
